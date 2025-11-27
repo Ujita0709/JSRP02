@@ -36,7 +36,7 @@ function App() {
     return (
       u.name.includes(keyword) ||
       u.hobby.includes(keyword) ||
-      (u.introduce && u.introduce.includes(keyword)){/*問題2*/}
+      (u.introduce && u.introduce.includes(keyword))//問題4
     );
   });
 
