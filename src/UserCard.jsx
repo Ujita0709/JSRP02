@@ -16,3 +16,4 @@ function UserCard({ name, age, hobby }) {
     </div>
   );
 }
+export default UserCard;
