@@ -1,4 +1,4 @@
-function UserCard({ name, age, hobby, introduce, bgcolor}) {
+function UserCard({ name, age, hobby, introduce, bgColor}) {
 //introduce:問題2、bgcolor:問題1
   // 年齢によるデフォルト背景色（30歳以上なら薄い赤）：問題3
   const defaultBgColor = age >= 30 ? "#ffe5e5" : "#f9f9f9";  
@@ -14,7 +14,7 @@ function UserCard({ name, age, hobby, introduce, bgcolor}) {
 
   //クリックしたら名前を表示：問題4
   const handleClick = () =>{
-    alert(`こんにちは、S{name}です！`)
+    alert(`こんにちは、${name}です！`)
   }
 
   return (
