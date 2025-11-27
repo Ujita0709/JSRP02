@@ -1,30 +1,29 @@
-function UserCard({ name, age, hobby, introduce, bgColor}) {
-//introduce:問題2、bgcolor:問題1
-  // 年齢によるデフォルト背景色（30歳以上なら薄い赤）：問題3
-  const defaultBgColor = age >= 30 ? "#ffe5e5" : "#f9f9f9";  
-  // インラインスタイル
-  const cardStyle = {
-    border: "1px solid #ccc",
-    padding: "16px",
-    marginBottom: "12px",
-    borderRadius: "8px",
-    backgroundColor: bgColor || defaultBgColor,//問題1
-    cursor: "pointer",
+//CSS module:問題6
+import styles from "./UserCard.module.css";
+
+function UserCard({ name, age, hobby, introduce, bgColor }) {
+  const classes = [
+    styles.card,
+    age >= 30 ? styles.cardOld : "",
+    bgColor ? styles.cardCustomBg : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const style = bgColor ? { backgroundColor: bgColor } : undefined;
+
+  const handleClick = () => {
+    alert(`こんにちは、${name}です！`);
   };
 
-  //クリックしたら名前を表示：問題4
-  const handleClick = () =>{
-    alert(`こんにちは、${name}です！`)
-  }
-
   return (
-    <div style={cardStyle} onClick={handleClick}>{/*問題4*/}
+    <div className={classes} style={style} onClick={handleClick}>
       <h2>{name}</h2>
       <p>年齢：{age} 歳</p>
       <p>趣味：{hobby}</p>
-      {/* introduce が渡されていれば表示:問題2 */}
       {introduce && <p>自己紹介：{introduce}</p>}
     </div>
   );
 }
+
 export default UserCard;
