@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.cardOld {
+  background-color: #ffe5e5; /* 30歳以上用 */
+}
+
+.cardCustomBg {
+  /* Propsで背景色を指定する場合用。
+     背景色自体は inline style で当てる想定 */
+}
